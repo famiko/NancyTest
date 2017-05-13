@@ -99,8 +99,10 @@
     <Compile Include="ConfigApp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RedisService\AudioService.cs" />
-    <Compile Include="UserValidator.cs" />
+    <Compile Include="RedisUtils.cs" />
+    <Compile Include="IVideoAnswerValidator.cs" />
+    <Compile Include="Service\AudioService.cs" />
+    <Compile Include="Service\VideoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -118,12 +120,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\css\bootstrap.min.css" />
-    <Content Include="content\css\maptcha-node.css" />
+    <Content Include="content\css\captcha-node.css" />
     <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="content\js\bootstrap.js" />
     <Content Include="content\js\bootstrap.min.js" />
-    <Content Include="content\js\captcha-node.js" />
+    <Content Include="content\js\main.js" />
     <Content Include="Views\index.html" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

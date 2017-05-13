@@ -4,13 +4,13 @@ using System.Security.Cryptography;
 using System.Text;
 using ServiceStack.Redis;
 
-namespace NancyTest.RedisService
+namespace NancyTest
 {
-    public class AudioService
+    public class RedisUtils
     {
         private readonly IRedisClient _client;
 
-        public AudioService(IRedisClient client)
+        public RedisUtils(IRedisClient client)
         {
             _client = client;
             // 初始化Redis

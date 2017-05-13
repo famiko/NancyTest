@@ -10,7 +10,6 @@ using System.Collections.Concurrent;
 using System.Text.RegularExpressions;
 using audio;
 using Nancy.Conventions;
-using NancyTest.RedisService;
 using ServiceStack.Logging;
 using video;
 
@@ -21,20 +20,13 @@ namespace NancyTest
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
             base.ApplicationStartup(container, pipelines);
-            CookieBasedSessions.Enable(pipelines);
+//            CookieBasedSessions.Enable(pipelines);
             //redis setting
             container.Register<IRedisClientsManager>(
                 new PooledRedisClientManager("127.0.0.1:6379"));
             container.Register<IRedisClient>(container.Resolve<IRedisClientsManager>().GetClient());
 //            container.Register<IRedisClient>(new RedisClient());
-            container.Register<AudioService>(new AudioService(
-                container.Resolve<IRedisClient>()));
-            container.Register<AudioUtil>(new AudioUtil());
-            container.Register<VideoUtil>(new VideoUtil());
-            //RedisBasedSessions.Enable(pipelines);
-            //pipelines.EnableBasicAuthentication(new BasicAuthenticationConfiguration(
-            //    container.Resolve<IUserValidator>(),
-            //    "MyRealm"));
+            RedisBasedSessions.Enable(pipelines);
         }
         protected override IRootPathProvider RootPathProvider
         {

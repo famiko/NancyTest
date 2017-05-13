@@ -10,7 +10,7 @@ namespace Nancy.Session
     public class RedisBasedSessionsConfiguration
     {
         internal const string DefaultCookieName = "_ncr";
-        internal const string DefaultConnectionString = "dsds.97sgzk.ng.0001.apne1.cache.amazonaws.com:6379";
+        internal const string DefaultConnectionString = "127.0.0.1:6379";
         internal const int DefaultSessionDuration = 2592000; // 30 days
         internal const bool DefaultEnableSlidingSessions = true;
         internal const string DefaultPrefix = "";

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NancyTest.Service;
 
 namespace NancyTest
 {
@@ -12,21 +13,24 @@ namespace NancyTest
     {
         static void Main(string[] args)
         {
-            using (var host = new NancyHost(new ConfigApp(),new Uri("http://localhost:80")))
+            using (var host = new NancyHost(new ConfigApp(),new Uri("http://localhost:8087")))
             {
                 string rootPath = @"C:\Users\dbfan\Documents\Visual Studio 2017\Projects\NancyTest\NancyTest\";
                 string[] strings = { "audio_gen", "video_gen" };
-                foreach (var path in strings)
+                foreach (string path in strings)
                 {
-                    var folder = rootPath + path;
+                    string folder = rootPath + path;
                     if (System.IO.Directory.Exists(folder))
                     {
                         System.IO.Directory.Delete(folder, true);
                     }
-                    System.IO.Directory.CreateDirectory(folder);
+                }
+                foreach (var str in strings)
+                {
+                    System.IO.Directory.CreateDirectory(rootPath + str);
                 }
                 host.Start();
-                Console.WriteLine("Running on http://localhost:80");
+                Console.WriteLine("Running on http://localhost:8087");
                 Console.ReadLine();
             }
         }
