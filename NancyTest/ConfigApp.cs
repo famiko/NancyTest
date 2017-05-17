@@ -20,13 +20,13 @@ namespace NancyTest
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
             base.ApplicationStartup(container, pipelines);
-//            CookieBasedSessions.Enable(pipelines);
+            CookieBasedSessions.Enable(pipelines);
             //redis setting
             container.Register<IRedisClientsManager>(
                 new PooledRedisClientManager("127.0.0.1:6379"));
             container.Register<IRedisClient>(container.Resolve<IRedisClientsManager>().GetClient());
 //            container.Register<IRedisClient>(new RedisClient());
-            RedisBasedSessions.Enable(pipelines);
+//            RedisBasedSessions.Enable(pipelines);
         }
         protected override IRootPathProvider RootPathProvider
         {

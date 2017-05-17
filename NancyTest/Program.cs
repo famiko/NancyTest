@@ -13,7 +13,7 @@ namespace NancyTest
     {
         static void Main(string[] args)
         {
-            using (var host = new NancyHost(new ConfigApp(),new Uri("http://localhost:8087")))
+            using (var host = new NancyHost(new ConfigApp(),new Uri("http://localhost:80")))
             {
                 string rootPath = @"C:\Users\dbfan\Documents\Visual Studio 2017\Projects\NancyTest\NancyTest\";
                 string[] strings = { "audio_gen", "video_gen" };

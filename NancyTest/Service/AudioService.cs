@@ -24,7 +24,14 @@ namespace NancyTest.Service
         public string generate(string key)
         {
             var fileName = Guid.NewGuid().ToString();
-            _audioUtil.audio(key, fileName);
+            try
+            {
+                _audioUtil.audio(key, fileName);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("找不到" + key);
+            }
             return fileName;
         }
 
