@@ -63,8 +63,8 @@ namespace NancyTest.Service
                     break;
                 case VideoType.subtitle:
                     session["video_answer"] = ((MWArray[])_videoUtil.test_video(1, 1, 2, str, -1))[0];
-                    session["front"] = _random.Next(0, 1).ToString();
-                    session["video_length"] = _random.Next(4, 6).ToString();
+                    session["front"] = _random.Next(0, 2).ToString();
+                    session["video_length"] = _random.Next(4, 7).ToString();
                     session["video_question"] = _audioService.generate($"{session["front"]}-{session["video_length"]}");
                     break;
             }

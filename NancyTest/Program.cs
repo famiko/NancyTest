@@ -30,7 +30,7 @@ namespace NancyTest
                     System.IO.Directory.CreateDirectory(rootPath + str);
                 }
                 host.Start();
-                Console.WriteLine("Running on http://localhost:8087");
+                Console.WriteLine("Running on http://localhost:80");
                 Console.ReadLine();
             }
         }
