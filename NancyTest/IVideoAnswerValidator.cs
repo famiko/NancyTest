@@ -18,8 +18,7 @@ namespace NancyTest
             var length = Int32.Parse(session["video_length"].ToString());
             var solution = (Int32.Parse(session["front"].ToString()) == 0)
                 ? str.Substring(0,  length)
-                : str.Substring(str.Length - length + 1, length);
-            Console.WriteLine(str);
+                : str.Substring(str.Length - length, length);
             if (answer.ToLower().Equals(solution.ToLower()))
             {
                 return true;

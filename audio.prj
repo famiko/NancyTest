@@ -47,7 +47,7 @@
     <param.net.tsa.namespace />
     <param.net.tsa.superclass>AudioUtil</param.net.tsa.superclass>
     <param.net.tsa.metadata />
-    <param.net.tsa.metadata.assembly>C:\Program Files\MATLAB\R2016b\bin\win64</param.net.tsa.metadata.assembly>
+    <param.net.tsa.metadata.assembly>C:\Program Files\MATLAB\R2016b\bin</param.net.tsa.metadata.assembly>
     <param.net.saved.interface />
     <unset>
       <param.icon />
